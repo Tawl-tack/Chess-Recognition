@@ -1,6 +1,5 @@
 <a id="readme-top"></a>
 
-<br />
 <div align="center">
   <a href="https://github.com/Tawl-tack/Chess-Recognition">
     <img src="application\public\image.png" alt="Logo" >
@@ -92,6 +91,10 @@ _Below is an example of how you can instruct your audience on installing and set
 
 Here I will put a bullet list with all that my project is capable of doing.
 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 ---
 ## Technologies Used
 
@@ -111,12 +114,16 @@ Essa seção é um resumo das suas habilidades. Coloque as tecnologias em catego
     * **OpenCV & NumPy:** Applied for computer vision tasks such as perspective-shifting and image augmentation to improve the model's accuracy.
 
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ---
 ## Learning & Challenges
 
 Agora eu vou ter que escrever esse README e depois dar commit (release-readme é o nome do branch)
 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- 
