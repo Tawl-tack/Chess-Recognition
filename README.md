@@ -1,11 +1,11 @@
+<a id="readme-top"></a>
+
 <br />
 <div align="center">
   <a href="https://github.com/Tawl-tack/Chess-Recognition">
     <img src="application\public\image.png" alt="Logo" >
   </a>
 
----
-  
   <p align="center">
     <h3>AI System That Convert Images to Playable Chess-Boards</h3>
     <br />
@@ -42,6 +42,9 @@ This idea comes from my own trouble to study by chess books. I spent a lot of ti
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- CONTRIBUTING 
 
 ---
 ## Getting Started
@@ -82,6 +85,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+-->
 
 ---
 ## Features
@@ -107,6 +111,7 @@ Essa seção é um resumo das suas habilidades. Coloque as tecnologias em catego
     * **OpenCV & NumPy:** Applied for computer vision tasks such as perspective-shifting and image augmentation to improve the model's accuracy.
 
 
+
 ---
 ## Learning & Challenges
 
@@ -114,9 +119,8 @@ Agora eu vou ter que escrever esse README e depois dar commit (release-readme é
 
 
 
+<!-- 
 
-
-<!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -131,7 +135,7 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 
-<!-- CONTACT -->
+ -->
 ## 🌐 Contact
 
 Higino P.C. Neto - higino.dev@gmail.com
