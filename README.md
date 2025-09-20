@@ -30,24 +30,26 @@
 
 <br />
 
-## ♟️ About the Project
+---
+
+## About the Project
 
 Chess Print is a open-source AI project that aims convert chess-board positions from old chess books - or just from prints - into online playable boards with high precision in low time.
 
-### 🎯 Motivation
+### Motivation
 
 This idea comes from my own trouble to study by chess books. I spent a lot of time putting all the pieces one by one into random chess websites to study them. So I decided to learn ML (Machine Learning) and Computer Vision in order to automatize this manual work.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
-## 🚀 Getting Started
+---
+## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### 📝 Prerequisites
+### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
 * npm
@@ -55,7 +57,7 @@ This is an example of how to list things you need to use the software and how to
   npm install npm@latest -g
   ```
 
-### 🛠️ Installation
+### Installation
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
@@ -81,20 +83,13 @@ _Below is an example of how you can instruct your audience on installing and set
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-## 🧩 Features
+---
+## Features
 
 Here I will put a bullet list with all that my project is capable of doing.
 
-## 🧰 Technologies Used
-
-Essa é uma ótima lista! Você aprendeu muita coisa importante e, sim, tudo isso é extremamente relevante para o seu projeto e deve ser incluído no README.
-
-Aqui estão os tópicos já formatados para a seção `Technologies Used` e, para o `Learning & Challenges`, você também pode usar essa lista para detalhar o que aprendeu.
-
 ---
-
-### 💻 Technologies Used
+## Technologies Used
 
 Essa seção é um resumo das suas habilidades. Coloque as tecnologias em categorias lógicas para facilitar a leitura.
 
@@ -112,8 +107,8 @@ Essa seção é um resumo das suas habilidades. Coloque as tecnologias em catego
     * **OpenCV & NumPy:** Applied for computer vision tasks such as perspective-shifting and image augmentation to improve the model's accuracy.
 
 
-
-## 🔎 Learning & Challenges
+---
+## Learning & Challenges
 
 Agora eu vou ter que escrever esse README e depois dar commit (release-readme é o nome do branch)
 
@@ -122,7 +117,7 @@ Agora eu vou ter que escrever esse README e depois dar commit (release-readme é
 
 
 <!-- CONTRIBUTING -->
-## 💡 Contributing
+## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
