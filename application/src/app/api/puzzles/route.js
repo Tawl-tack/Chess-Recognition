@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 export async function GET () {
     try{    
         const puzzles = await Puzzle.findAll();
-        return NextResponse.json(Puzzles);
+        return NextResponse.json(puzzles);
     } catch (err) {
         return NextResponse.json({ error: err.message }, { status: 500});
     }
@@ -15,10 +15,10 @@ export async function GET () {
 export async function POST (req) {
     try{
         const body = await req.json();
-        const { nome, email, senha } = body;
+        const { fen_inicial, movimento_correto, dificuldade } = body;
 
-        const puzzle = await Puzzle.create({ nome, email, senha });
-        return NextResponse.json(Puzzle);
+        const puzzle = await Puzzle.create({ fen_inicial, movimento_correto, dificuldade });
+        return NextResponse.json(puzzle);
     } catch (err) {
         return NextResponse.json({ error: err.message }, { status: 500});
     }
