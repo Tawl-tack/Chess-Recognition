@@ -2,13 +2,11 @@
 
 import { redirect } from "next/navigation";
 
-export default async function createUsuario (formData) {
+export default async function createUsuario(formData) {
 
     const nome = formData.get("nome");
     const email = formData.get("email");
     const senha = formData.get("senha");
-
-    console.log(formData);
 
     // Create a general URL
     const apiURL = "http://localhost:3000/api/usuarios/"
@@ -17,7 +15,7 @@ export default async function createUsuario (formData) {
     const res = await fetch(apiURL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({nome, email, senha})
+        body: JSON.stringify({ nome, email, senha })
     });
 
     // Error traited

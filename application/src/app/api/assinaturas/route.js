@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 // Create
 
-export async function POST () {
+export async function POST (req) {
     try {    
         const body = await req.json();
         const { data_inicio, data_fim, status_assinatura } = body;
@@ -11,6 +11,7 @@ export async function POST () {
         const assinatura = await Assinatura.create({ data_inicio, data_fim, status_assinatura });
         return NextResponse.json(assinatura);
     } catch (err) {
+        console.error("Error sequelize: ", err);
         return NextResponse.json({error: err.message}, {status: 500});
     }
 }

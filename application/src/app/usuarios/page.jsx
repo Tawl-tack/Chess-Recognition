@@ -7,7 +7,7 @@ export default async function showUsuarios () {
     
     return (
         <div>
-        <table>
+        <table border="1">
             <thead>
                 <tr>
                     <th>Name</th>
