@@ -2,9 +2,10 @@
 
 <div align="center">
   <a href="https://github.com/Tawl-tack/Chess-Recognition">
-    <img src="application\public\image.png" alt="Logo" >
+    <img src="application\public\Logo_Chess_Print.png" alt="Logo" >
   </a>
 
+  ---
   <p align="center">
     <h3>AI System That Convert Images to Playable Chess-Boards</h3>
     <br />

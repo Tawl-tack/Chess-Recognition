@@ -1,11 +1,11 @@
 "use client"
 
 import { useState } from "react";
-import { Chessboard } from "react-chessboard";
+import Load_chessboard from "./load_chessboard";
 
 export default function Upload_Image () {
     const [ file, setFile ] = useState(null);
-    const [ result, setResult ] = useState(null);
+    const [ fen, setFen ] = useState(null);
 
     const handle_change = (e) => {
         if (e.target.files) setFile(e.target.files[0]);
@@ -17,28 +17,28 @@ export default function Upload_Image () {
         const formData = new FormData();
         formData.append("image", file);
 
-        const response = await fetch('/api/convert_img', {
+        const response = await fetch('/api/fastapi/convert', {
             method: "POST",
             body: formData,
         });
 
         const data = await response.json();
-        setResult(data);
-    }
+        setFen(data.fen);
+        
 
-    const showBoard = () => {
-        return (
-            <Chessboard position={result.fen} />
-        );
+
     }
 
     return (
         <div>
-            <h1>Envie a imagem aqui para converte-la</h1>
+            <h2>Envie a imagem aqui para converte-la</h2>
             <input type="file" onChange={handle_change} />
             {file && <p>Arquivo: {file.name}</p>} <br />
             <button onClick={handle_submit}>Converter</button>
-            {result && <p>Resultado: {result.fen}</p>}
+            {fen && <p>Resultado: {fen}</p>}
+            <div style={{width: '400px'}}>
+            {fen && <Load_chessboard fen={fen} />}
+            </div>
             <br/>
         </div>
     );

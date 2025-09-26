@@ -2,12 +2,17 @@ import { Chessboard } from "react-chessboard";
 import { Chess } from "chess.js";
 import { useState } from "react";
 
-export default function Load_chessboard() {
+export default function Load_chessboard({ fen }) {
+
+  
+
+  const chessboardOptions = {
+    position: fen
+  };
 
   return (
-    <div>
-      <Chessboard position={result.fen} />
-      
+    <div style={{width: '400px'}}>
+      <Chessboard options={chessboardOptions} />
     </div>
   );
 
