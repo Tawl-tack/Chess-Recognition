@@ -1,11 +1,10 @@
 "use server";
 
-import { Plano } from "../database/models/tables";
+import { Plano } from "../../../database/models/tables";
 
 export default async function showPlanos() {
-    const planos = await Plano.findAll();
 
-    console.log(planos);
+    const planos = await Plano.findAll();
 
     return (
         <div>

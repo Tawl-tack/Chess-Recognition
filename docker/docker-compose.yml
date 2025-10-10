@@ -1,0 +1,41 @@
+  services:
+    mysql:
+      image: mysql:8.0
+      restart: always
+      environment:
+        MYSQL_DATABASE: chess_print
+        MYSQL_ROOT_PASSWORD: root
+      ports:
+        - "3307:3306"
+      volumes:
+        - mysql_data:/var/lib/mysql
+      healthcheck:
+        test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+        interval: 5s
+        retries: 10
+
+    next:
+      build:
+        context: ../application
+      ports:
+        - "3000:3000"
+      depends_on:
+        - mysql
+        - fastapi
+      volumes:
+        - ../application/src/app:/app/src/app
+        - ../application/database:/app/database
+      entrypoint: ["/app/entrypoint.sh"]
+
+    fastapi:
+      build:
+        context: ../API
+        dockerfile: Dockerfile
+      ports:
+        - "8000:8000"
+      volumes:
+        - ../API/src:/app/src
+  
+    
+  volumes:
+    mysql_data:

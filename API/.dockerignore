@@ -1,0 +1,10 @@
+API/dataset/
+API/.venv/
+API/runs/detect/
+API/note/
+API/build_dataset.py
+API/model/test.py
+API/model/train.py
+API/model/val.py
+API/model/yolo11s.pt
+API/src/__pycache__/

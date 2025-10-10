@@ -1,8 +1,9 @@
 "use server";
 
-import { Usuario } from "../database/models/tables";
+import { Usuario } from "../../../database/models/tables";
 
 export default async function showUsuarios() {
+
     const usuarios = await Usuario.findAll();
 
     return (

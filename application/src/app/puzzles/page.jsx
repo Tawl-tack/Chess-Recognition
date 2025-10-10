@@ -1,8 +1,9 @@
 "use server";
 
-import { Puzzle } from "../database/models/tables";
+import { Puzzle } from "../../../database/models/tables";
 
 export default async function showPuzzle() {
+
     const puzzles = await Puzzle.findAll();
 
     return (

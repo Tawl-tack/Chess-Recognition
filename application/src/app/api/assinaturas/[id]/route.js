@@ -1,4 +1,4 @@
-import { Assinatura } from "@/app/database/models/tables";
+import { Assinatura } from "../../../../../database/models/tables";
 import { NextResponse } from "next/server";
 
 // Read By ID

@@ -9,7 +9,9 @@ app = FastAPI()
 
 # just for tests
 # dummy_img_path = r"C:\dev\Chess-Print-API\dataset\test_images\Captura de tela 2025-08-20 151317.png"
-dummy_model_path = r"C:\dev\Chess-Print-API\API\model\model.pt"
+MODEL_PATH = "/app/model/model.pt" # docker path
+model = YOLO(MODEL_PATH)
+
 
 def pre_processing(img_web):
     img_np_array = np.frombuffer(img_web, np.uint8)
@@ -17,8 +19,7 @@ def pre_processing(img_web):
     img = cv2.resize(img, (416, 416))
     return img
 
-def predict(img, model_path):
-    model = YOLO(model_path)
+def predict(img):
     results = model.predict(img, imgsz=416)
     return results
 
@@ -84,12 +85,11 @@ async def main(file: UploadFile = File(...)):
     web_img = await file.read()
 
     img = pre_processing(web_img)
-    results = predict(img, dummy_model_path)
+    results = predict(img)
     boxes = results[0].boxes
     matrix = to_matrix(boxes)
     fen = to_fen(matrix)
     return {"fen": fen}
 
 if __name__ == "__main__":
-    main()
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("src.main:app", host="0.0.0.0", port=8000, reload=True) 

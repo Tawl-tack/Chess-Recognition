@@ -9,44 +9,33 @@ API/model/test.py
 API/model/train.py
 API/model/val.py
 API/model/yolo11s.pt
-
-
+API/src/__pycache__/
 
 # dependencies
-/my-app/node_modules
-/my-app/.pnp
-/my-app/.pnp.*
-/my-app/.yarn/*
-!/my-app/.yarn/patches
-!/my-app/.yarn/plugins
-!/my-app/.yarn/releases
-!/my-app/.yarn/versions
+/application/node_modules
+/application/.pnp
+/application/.pnp.*
+/application/.yarn/*
+!/application/.yarn/patches
+!/application/.yarn/plugins
+!/application/.yarn/releases
+!/application/.yarn/versions
 
 # testing
-/my-app/coverage
+/application/coverage
 
 # next.js
-/my-app/.next/
-/my-app/out/
+/application/.next/
+/application/out/
 
-/my-app/build
+/application/build
 
 # misc
-/my-app/.DS_Store
-/my-app/*.pem
+/application/.DS_Store
+/application/*.pem
 
 # debug
-/my-app/npm-debug.log*
-/my-app/yarn-debug.log*
-/my-app/yarn-error.log*
-/my-app/.pnpm-debug.log*
-
-# env files
-/my-app/.env*
-
-# vercel
-/my-app/.vercel
-
-# typescript
-/my-app/*.tsbuildinfo
-/my-app/next-env.d.ts
+/application/npm-debug.log*
+/application/yarn-debug.log*
+/application/yarn-error.log*
+/application/.pnpm-debug.log*

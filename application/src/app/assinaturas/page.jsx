@@ -1,8 +1,9 @@
 "use server";
 
-import { Assinatura } from "../database/models/tables";
+import { Assinatura } from "../../../database/models/tables";
 
 export default async function showAssinaturas() {
+
     const assinaturas = await Assinatura.findAll();
 
     return (
