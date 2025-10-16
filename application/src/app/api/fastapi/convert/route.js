@@ -7,7 +7,7 @@ export async function POST (req) {
     const fastApiFormData = new FormData();
     fastApiFormData.append('file', imageFile);
 
-    const fastApiResponse = await fetch('http://127.0.0.1:8000/convert/', {
+    const fastApiResponse = await fetch('http://fastapi:8000/convert/', {
         method: 'POST',
         body: fastApiFormData,
     });

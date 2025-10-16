@@ -1,4 +1,4 @@
-import { Usuario } from "@/app/database/models/tables";
+import { Usuario } from "../../../../database/models/tables";
 import { NextResponse } from "next/server";
 
 // Read all

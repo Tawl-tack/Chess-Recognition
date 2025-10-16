@@ -1,4 +1,4 @@
-import { Plano } from "@/app/database/models/tables";
+import { Plano } from "../../../../database/models/tables";
 import { NextResponse } from "next/server";
 
 // Read All

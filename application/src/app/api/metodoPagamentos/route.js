@@ -1,4 +1,4 @@
-import { MetodoPagamento } from "@/app/database/models/tables";
+import { MetodoPagamento } from "../../../../database/models/tables";
 import { NextResponse } from "next/server";
 
 // Create

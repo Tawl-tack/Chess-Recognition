@@ -1,4 +1,4 @@
-import { Conversao } from "@/app/database/models/tables";
+import { Conversao } from "../../../../database/models/tables";
 import { NextResponse } from "next/server";
 
 // Read all

@@ -1,0 +1,10 @@
+dataset/
+.venv/
+runs/detect/
+note/
+build_dataset.py
+model/test.py
+model/train.py
+model/val.py
+model/yolo11s.pt
+src/__pycache__/

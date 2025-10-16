@@ -1,4 +1,4 @@
-import { Puzzle } from "@/app/database/models/tables";
+import { Puzzle } from "../../../../database/models/tables";
 import { NextResponse } from "next/server";
 
 // Read all
