@@ -1,15 +1,18 @@
 {
+  "type": "module",
   "name": "application",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "connections": "node ./database/sync.js && cd ../API/ && ./.venv/Scripts/activate && python ./src/main.py",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
     "chess.js": "^1.4.0",
+    "dotenv": "^17.2.3",
     "mysql2": "^3.14.5",
     "next": "15.5.3",
     "react": "19.1.0",

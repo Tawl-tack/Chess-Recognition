@@ -1,5 +1,5 @@
 import os
-# Global Variable:
+
 piece_to_id = {
     'P': 0, 'N': 1, 'B': 2, 'R': 3, 'Q': 4, 'K': 5,
     'p': 6, 'n': 7, 'b': 8, 'r': 9, 'q': 10, 'k': 11
@@ -102,27 +102,3 @@ def create_label_folder(image_dir: str, type_labels: str):
 def main():
     create_label_folder("dataset\\test", "test")
     create_label_folder("dataset\\train", "train")
-
-
-
-# def delete_txt_files():
-#     files = os.listdir("dataset\\train")
-
-#     for fl in files:
-#         if fl.endswith(".txt"):
-#             file_path = os.path.join("dataset\\train", fl)
-#             os.remove(file_path)
-#             print("Removendo ", file_path)
-
-
-
-# def delete_txt_files():
-#     files = os.listdir("dataset\\images\\train")
-#     files1 = os.listdir("dataset\\labels\\test")
-
-#     print(len(files) + len(files1))    
-
-
-
-# if __name__ == "__main__":
-#     delete_txt_files()

@@ -9,4 +9,4 @@ echo "Sincronizing tables..."
 node database/sync.js
 
 echo "Starting Next.js..."
-npm run dev
+npm run dev -- -H 0.0.0.0

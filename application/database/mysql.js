@@ -1,12 +1,13 @@
 import { Sequelize } from "sequelize";
 import mysql2 from 'mysql2';
+import 'dotenv/config'
 
 const mysql = new Sequelize(
-  "chess_print",
-  "root",
-  "root",
+  process.env.DB_NAME || "chess_print",
+  process.env.DB_USER || "root",
+  process.env.DB_PASS || "root",
   {
-    host: "mysql",
+    host: process.env.DB_HOST || "mysql",
     dialect: "mysql",
     dialectModule: mysql2,
   });

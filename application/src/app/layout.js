@@ -5,9 +5,9 @@ import "./globals.css";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-[#2B2B3F]">
+      <body className="bg-[#34344C]">
 
-        <header className="bg-[#191927] text-white shadow-md shadow-[#8e72ee]">
+        <header className="bg-[#222232] text-white shadow-md shadow-[#8e72ee]">
           <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
             <div className="flex items-center gap-3">
               <Link href="/">

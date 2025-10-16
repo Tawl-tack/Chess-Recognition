@@ -26,6 +26,11 @@
         - ../application/src/app:/app/src/app
         - ../application/database:/app/database
       entrypoint: ["/app/entrypoint.sh"]
+      environment: 
+        DB_HOST: mysql
+        DB_NAME: chess_print
+        DB_USER: root
+        DB_PASS: root
 
     fastapi:
       build:
