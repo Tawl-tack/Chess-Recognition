@@ -25,6 +25,7 @@
       volumes:
         - ../application/src/app:/app/src/app
         - ../application/database:/app/database
+        - ../application/public:/app/public
       entrypoint: ["/app/entrypoint.sh"]
       environment: 
         DB_HOST: mysql

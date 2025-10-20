@@ -1,10 +1,10 @@
 import { Chessboard, ChessboardProvider, SparePiece, defaultPieces } from "react-chessboard";
 import { Chess } from "chess.js";
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 
 export default function Load_chessboard({ fen }) {
 
-  // Use useRef to not re-render the page when the chessGame position changes.
   const chessGameRef = useRef(new Chess(fen, {
     skipValidation: true
   }));
@@ -12,9 +12,9 @@ export default function Load_chessboard({ fen }) {
   const chessGame = chessGameRef.current;
 
 
-  // Creates a variable to the chessPosition, in order to change it by the time; Creates another one to take the width of a square to maintain the spare part redimentionable.
   const [chessPosition, setChessPosition] = useState(chessGame.fen());
   const [squareWidth, setSquareWidth] = useState(null);
+  const [showCopied, setShowCopied] = useState(false);
 
   // When the chessboard trigger on the screen, it will take the width of a square and send it to squareWidth
   useEffect(() => {
@@ -23,7 +23,6 @@ export default function Load_chessboard({ fen }) {
   }, []);
 
 
-  // When someone drops a piece, it will take the atual position, the target position and will update the fen to contemplate it.
   function onPieceDrop({
     sourceSquare,
     targetSquare,
@@ -52,7 +51,6 @@ export default function Load_chessboard({ fen }) {
     return true;
   }
 
-  // Create the spare area
   const blackPieceTypes = [];
   const whitePieceTypes = [];
 
@@ -74,6 +72,15 @@ export default function Load_chessboard({ fen }) {
     chessGameRef.current = new Chess(fen, { skipValidation: true });
 
     setChessPosition(chessGameRef.current.fen());
+  }
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(chessPosition);
+    setShowCopied(true);
+    setTimeout(() => {
+      setShowCopied(false);
+    }, 2000)
+
   }
 
   return (
@@ -98,14 +105,30 @@ export default function Load_chessboard({ fen }) {
               </div>
             ))}
           </div>
-      <button onClick={handleRestart} className=" hover:scale-102 shadow-md
+
+          <div className="flex gap-2">
+            <button onClick={handleCopy} className="flex gap-2 items-center hover:scale-102 shadow-md
             hover:shadow-[#191927] transition-all duration-300
             cursor-pointer text-[#191927] font-semibold bg-[#8e72ee]
-             rounded-md px-5 my-2">Restart</button>
+             rounded-md px-2 py-2 my-2 w-30 h-8">
+
+              <Image src={showCopied ? '/check_back.png' : '/copy_back.png'} alt='copy_icon' width='20' height='20' />
+
+              <a>{showCopied ? 'Copied' : 'Copy FEN'}</a>
+            </button>
+
+            <button onClick={handleRestart} className=" hover:scale-102 shadow-md
+            hover:shadow-[#191927] transition-all duration-300
+            cursor-pointer text-[#191927] font-semibold bg-[#8e72ee]
+             rounded-md px-2 my-2 h-8">Restart</button>
+
+          </div>
 
           <div>
             <span className="text-white text-xs">FEN: {chessPosition}</span>
           </div>
+
+
         </ChessboardProvider>
       </div>
 
