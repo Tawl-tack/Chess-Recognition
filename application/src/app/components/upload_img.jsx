@@ -51,6 +51,11 @@ export default function Upload_Image() {
 
     }
 
+    const handle_delete = (id) => {
+        const new_uploads = uploads.filter(u => u.id !== id);
+        setUploads(new_uploads);
+    }
+
     return (
         <div className="flex w-full h-screen justify-center">
 
@@ -72,18 +77,22 @@ export default function Upload_Image() {
                         <span className="text-left">Select a File:</span>
                     </label>
 
-                    {/* {file && <img src={preview} alt="preview" className="w-50 h-50 object-cover rounded-md opacity-0 animate-fadeIn" />} */}
-
                     <div className="container-previews grid grid-cols-3 gap-4 justify-items-center">
+
                         {uploads.length > 0 &&
                             uploads.map((upload) => (
-                                <div key={upload.id} className="flex flex-col items-center gap-2 w-60 h-60 bg-[#3c3c57] p-5 rounded-md
+                                <div key={upload.id} className="relative flex flex-col items-center gap-2 w-60 h-60 bg-[#3c3c57] p-5 rounded-md
                         transform transition-all duration-300 hover:scale-103 hover:shadow-[#191927]
                         ">
+
+                                    <button className="absolute top-0 m-1 right-0 px-2 cursor-pointer text-[#191927] bg-[#8e72ee] rounded-md shadow-md
+                            transform transition-all duration-300 hover:scale-103 hover:shadow-[#191927]"
+                                        onClick={() => handle_delete(upload.id)}>X</button>
+
                                     <img src={upload.preview} className="w-40 h-40 object-cover rounded-md opacity-0 animate-fadeIn" />
                                     <button className="w-40 h-8 px-2 py-1 cursor-pointer text-[#191927] bg-[#8e72ee] rounded-md shadow-md
                             transform transition-all duration-300 hover:scale-103 hover:shadow-[#191927]"
-                                        onClick={() => handle_submit(upload.id)}> Convert</button>
+                                        onClick={() => handle_submit(upload.id)}>Convert</button>
                                 </div>
                             ))
                         }
@@ -97,14 +106,13 @@ export default function Upload_Image() {
                ">
                                 <label className="hover:scale-120 transition-all duration-300 cursor-pointer">
                                     <input type="file" onChange={handle_change} className="hidden" multiple />
-                                    {/* <span className="text-2xl font-bold font-sans bg-[#8e72ee] rounded-4xl px-4 py-2">+</span> */}
                                     <Image src={"/plus-hexagon.png"} width="60" height="60" alt="add-new-image" />
                                 </label>
                             </div>
+                            
 
                         }
                     </div>
-
                 </div>
             </div>
 
